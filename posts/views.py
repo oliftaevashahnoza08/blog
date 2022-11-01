@@ -9,12 +9,12 @@ User = get_user_model()
 
 class PostListView(ListView):
     template_name = "posts/post_list.html"
-    queryset = Post.objects.filter(is_draft=False)
+    queryset = Post.objects.prefetch_related("tags").filter(is_draft=False)
 
 
 class PostDetailView(DetailView):
     template_name = "posts/post_detail.html"
-    queryset = Post.objects.filter(is_draft=False)
+    queryset = Post.objects.prefetch_related("tags").filter(is_draft=False)
 
 
 class UsersPostListView(ListView):
@@ -27,7 +27,7 @@ class UsersPostListView(ListView):
         return get_object_or_404(User, username=self.get_username())
 
     def get_queryset(self):
-        qs = Post.objects.filter(is_draft=False)
+        qs = Post.objects.prefetch_related("tags").filter(is_draft=False)
         username = self.get_username()
         if username:
             qs = qs.filter(author__username=username)
