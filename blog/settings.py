@@ -121,7 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_FIELDS=[
-    BASE_DIR/"staticfiles"
+    os.path.join(BASE_DIR, "staticfiles")
 ]
 DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
 AUTH_USER_MODEL='users.user'
