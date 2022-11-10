@@ -1,3 +1,6 @@
+from pathlib import Path
+ # Build paths inside the project like this: BASE_DIR / 'subdir'. 
+BASE_DIR = Path(__file__).resolve().parent.parent
 """
 Django settings for blog project.
 
@@ -118,10 +121,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-from pathlib import Path
-
-BASE_DIR / 'subdir'
-BASE_DIR=Path(file).resolve().parent.parent
 
 
 STATIC_URL = '/static/'
