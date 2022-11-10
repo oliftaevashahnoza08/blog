@@ -25,3 +25,6 @@ class Post(models.Model):
             self.published_at=timezone.now()
 
         super().save(*args, **kwargs)
+
+
+
