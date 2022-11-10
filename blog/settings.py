@@ -125,4 +125,3 @@ STATIC_FIELDS=[
 ]
 DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
 AUTH_USER_MODEL='users.user'
-from pathlib import Path
