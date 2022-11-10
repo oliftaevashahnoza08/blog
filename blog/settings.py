@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -121,7 +121,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_FIELDS=[
-    os.path.join(BASE_DIR, "staticfiles")
+    BASE_DIR / "staticfiles"
 ]
 DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
 AUTH_USER_MODEL='users.user'
+from pathlib import Path
